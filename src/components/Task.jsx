@@ -17,7 +17,7 @@ const Task = () => {
     setTask('')
   }
 
-  function handleRemoveTask(index){
+  function handleDoneTask(index){
     setTasks(Tasks=>Tasks.filter((_,i)=>i!==index))
   }
   return (
@@ -31,7 +31,7 @@ const Task = () => {
               <div className="flex w-full">
             <li className="border w-full rounded text-white bg-[#52b5e7] p-1 m-1.5 flex justify-between" key={index}>
               <div>{objTask.task} {new Date(objTask.time).toLocaleString()}</div>
-              <button onClick={()=>handleRemoveTask(index)} className="bg-black  text-white rounded p-1 ml-2">delete</button>
+              <button onClick={()=>handleDoneTask(index)} className="bg-black  text-white rounded p-1 ml-2">Done</button>
             </li>
           </div>)
 
